@@ -1,0 +1,10 @@
+<div class="index">
+  <%= Enum.map @content, fn(post) ->
+    """
+    #{post.content}
+    <hr />
+    """
+  end %>
+  <%= @prev %>
+  <%= @next %>
+</div>
