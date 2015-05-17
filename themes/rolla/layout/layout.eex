@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Benny Hallett | thoughts on software engineering</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= @css %>
+    <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css" />
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel='stylesheet' type='text/css' />
+    <%= @js %>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-9971151-1', 'bennyhallett.com');
+        ga('send', 'pageview');
+      </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row header">
+        <div class="six columns alpha">
+          <h1><a href="/">Benny Hallett</a></h1>
+          <h2>thoughts on software engineering</h2>
+        </div>
+        <div class="six columns omega">
+          <ul class="nav">
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/contributions.html">Contributions</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row main">
+        <div class="nine columns alpha">
+          <%= @content %>
+        </div>
+        <div class="three columns omega">
+          <div class="centered">
+            <img src="assets/img/profile.jpeg" alt="Benny Hallett" class="profile" />
+          </div>
+          <div class="sidebar-item">
+            <ul class="side-nav">
+              <p>
+                <em>Hey there, I'm Benny Hallett</em> I'm a software engineer from the Central Coast of NSW, Australia.
+              </p>
+
+              <p class="find-me centered">
+                <a href="http://twitter.com/bennyhallett" target="_"><i class="fa fa-twitter fa-2x"></i></a>
+                <a href="http://github.com/bennyhallett" target="_"><i class="fa fa-github fa-2x"></i></a>
+                <a href="http://stackoverflow.com/users/109246/benny" target="_"><i class="fa fa-stack-overflow fa-2x"></i></a>
+              </p>
+
+              <p>
+              I like to write software in both <a href="http://ruby-lang.org">Ruby</a> and <a href="http://elixir-lang.org">Elixir</a> and sometimes publish articles about that.
+              </p>
+              <p>
+                Recently I've become more interested in the human aspects of software engineering, and will be exploring that more often.
+              </p>
+              <p>
+                Want to <a href="about.html">know more?</a>
+              </p>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row footer">
+      <div class="container">
+        <div class="three columns alpha">
+          <h5>site</h5>
+          <ul>
+            <li><a href="/">blog</a></li>
+            <li><a href="/projects.html">projects</a></li>
+            <li><a href="/contributions.html">contributions</a></li>
+            <li><a href="/about.html">about</a></li>
+          </ul>
+        </div>
+        <div class="three columns">
+        <h5>projects</h5>
+          <ul>
+            <li><a href="http://github.com/bennyhallett/obelisk">obelisk</a></li>
+            <li><a href="http://github.com/bennyhallett/anubis">anubis</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
