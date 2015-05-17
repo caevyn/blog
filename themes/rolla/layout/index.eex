@@ -1,0 +1,27 @@
+<div class="index">
+  <%= Enum.map @content, fn(post) ->
+    """
+    <div class="post">
+      <h3 class="post-title">
+        <a href="#{post.filename}">
+          #{post.frontmatter.title}
+        </a>
+      </h3>
+      <div class="post-date">
+        #{post.frontmatter.date}
+      </div>
+      #{post.frontmatter.description}
+    </div>
+    """
+  end %>
+
+  <div class="index-nav">
+    <div class="four columns alpha">
+      <%= @prev %> &nbsp;
+    </div>
+    <div class="four columns alpha omega">&nbsp;</div>
+    <div class="four columns omega pull-right">
+      <%= @next %> &nbsp;
+    </div>
+  </div>
+</div>
