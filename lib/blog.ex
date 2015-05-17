@@ -1,0 +1,2 @@
+defmodule Blog do
+end
