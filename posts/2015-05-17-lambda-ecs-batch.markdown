@@ -42,6 +42,27 @@ In your Github repo, go to Settings -> WebHooks and Services and add an AmazonSN
 
 Set up an S3 bucket to host the site. I won't go into detail here, AWS has good docs around it [here](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html). It is important to name the bucket the same as your domain. E.g. maltmurphy.com. Again, I suggest creating an IAM user just for publishing to the bucket. Add a bucket policy that allows that user to write to that bucket. Setting up route 53 for my domain was also straight forward thanks to the [good docs](http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html).
 
+The key statements on the bucket policy are:
+
+    {
+		"Sid": "Stmt1430825277885",
+		"Effect": "Allow",
+		"Principal": {
+			"AWS": "arn:aws:iam::<acc number>:user/s3guy"
+		},
+		"Action": "s3:ListBucket",
+		"Resource": "arn:aws:s3:::maltmurphy.com"
+	},
+	{
+		"Sid": "Stmt1430825277884",
+		"Effect": "Allow",
+		"Principal": {
+			"AWS": "arn:aws:iam::<acc number>:user/s3guy"
+		},
+		"Action": "s3:*",
+		"Resource": "arn:aws:s3:::maltmurphy.com/*"
+	}
+
 ### Docker container
 
 The docker container I use for the blog can be found [here](https://github.com/caevyn/obelisk-builder). It inherits from an existing Elixir base image, adds the aws-cli and a shell script. When you run the container the following script runs:
