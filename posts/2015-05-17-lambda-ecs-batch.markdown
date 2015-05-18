@@ -44,7 +44,7 @@ Set up an S3 bucket to host the site. I won't go into detail here, AWS has good 
 
 The key statements on the bucket policy are:
 
-    {
+       {
 		"Sid": "Stmt1430825277885",
 		"Effect": "Allow",
 		"Principal": {
@@ -71,11 +71,10 @@ The docker container I use for the blog can be found [here](https://github.com/c
     git clone https://github.com/caevyn/blog.git
     cd ./blog
     mix do deps.get, deps.compile
-    mix obelisk build > obelisk_log 2>&1
-    aws s3 sync obelisk_log s3://maltmurphy-logs/obelisk_log
+    mix obelisk build
     aws s3 sync build s3://maltmurphy.com/ --delete
  
-It simply clones the repo, uses Mix (The awesome Elixir command line tool) to fetch dependencies and compile. Obelisk is executed as a mix task and 'mix obelisk build' runs the static site generation. The aws cli is used to copy to an S3 bucket. The obelisk output is also copied to s3 for easier troubleshooting. The aws cli requires some environment variables for aws credentials to be passed in. This can be done via the ECS task but we will get to that in a moment.
+It simply clones the repo, uses Mix (The awesome Elixir command line tool) to fetch dependencies and compile. Obelisk is executed as a mix task and 'mix obelisk build' runs the static site generation. The aws cli is used to copy to an S3 bucket. The aws cli requires some environment variables for aws credentials to be passed in. This can be done via the ECS task but we will get to that in a moment.
 
 Build the Docker container and give it a docker hub friendly name, i.e. username/obelisk-builder. We will publish to the docker hub to make configuring ECS easier. Test the container and make sure it can connect to your S3 bucket, using the credentials of your S3 IAM user.
             
