@@ -87,7 +87,7 @@ Build the Docker container and give it a docker hub friendly name, i.e. username
 
 ### ECS
 
-Now we have a Docker image published to the hub we can set up an ECS task. When you first visit ECS you will step through a wizard where you can create a task on a default cluster. In step 1, choose 'custom task definition'. In the task definition, put in the name of the image you published to the docker hub, allocate some resources and set the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables for the S3 user's credentials. In step 3, choose 'run tasks once' and set the desired number of tasks to 1. Continue on and configure the cluster so that there is at least one instance. You will also be asked to create an IAM role that allows access to the ECS service. The ECS task definition can be found in this [Gist](https://gist.github.com/caevyn/c89e74e560c1545682f9). 
+Now we have a Docker image published to the hub we can set up an ECS task. When you first visit ECS you will step through a wizard where you can create a task on a default cluster. In step 1, choose 'custom task definition'. In the task definition, put in the name of the image you published to the docker hub, allocate some resources and set the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables for the S3 user's credentials. In step 3, choose 'run tasks once' and set the desired number of tasks to 1. Continue on and configure the cluster so that there is at least one instance. You will also be asked to create an IAM role that allows access to the ECS service. The ECS task definition can be found in this [Gist](https://gist.github.com/caevyn/3c95cdd6b9cd0c197cba). 
 
 Run the task and hopefully everything works. If it doesn't, there are a couple of things that can help troubleshoot. SSH into your container instance and you can query the task info as it is running with the following:
     
@@ -111,8 +111,8 @@ All that is left to configure is our Lambda job. It will subscribe to the SNS to
           startedBy: 'lambda'
         };
         ecs.runTask(params, function(err, data) {
-          if (err) console.log(err, err.stack); // an error occurred
-          else    { console.log(data); context.succeed("yew!");}           // successful response
+          if (err) console.log(err, err.stack);
+          else    { console.log(data); context.succeed("yew!");}
         });
     }; 
      
