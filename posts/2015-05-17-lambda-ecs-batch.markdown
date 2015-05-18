@@ -20,8 +20,8 @@ There are certainly simpler ways to generate and host a blog, so think of this a
 
 Create a new SNS topic and add an email subscription so we can test that it works. You can use the UI or AWS cli.
     
-        $ aws sns create-topic --name BlogDeploy
-        $ aws sns subscribe --topic-arn <your topic arn> --protocol email --notification-endpoint myemail@gmail.com
+    $ aws sns create-topic --name BlogDeploy
+    $ aws sns subscribe --topic-arn <your topic arn> --protocol email --notification-endpoint myemail@gmail.com
 
 It is also worth creating an IAM user just for this with permission to publish to the SNS topic but nothing else. Copy down the Id and secret key as you will need them to paste into Github. Edit the topic policy to give the new user access by adding the following statement to the array of statements.
     
@@ -49,10 +49,11 @@ The docker container I use for the blog can be found [here](https://github.com/c
     git clone https://github.com/caevyn/blog.git
     cd ./blog
     mix do deps.get, deps.compile
-    mix obelisk build
-    aws S3cp build s3://maltmurphy.com/ --recursive
+    mix obelisk build >> obelisk_log 2>&1
+    aws s3 sync obelisk_log s3://maltmurphy-logs/obelisk_log
+    aws s3 sync build s3://maltmurphy.com/ --delete
  
-It simply clones the repo, uses Mix (The awesome Elixir command line tool) to fetch dependencies and compile. Obelisk is executed as a mix task and 'mix obelisk build' runs the static site generation. The aws cli is used to copy to an S3 bucket. The aws cli requires some environment variables for aws credentials to be passed in. This can be done via the ECS task but we will get to that in a moment.
+It simply clones the repo, uses Mix (The awesome Elixir command line tool) to fetch dependencies and compile. Obelisk is executed as a mix task and 'mix obelisk build' runs the static site generation. The aws cli is used to copy to an S3 bucket. The obelisk output is also copied to s3 for easier troubleshooting. The aws cli requires some environment variables for aws credentials to be passed in. This can be done via the ECS task but we will get to that in a moment.
 
 Build the Docker container and give it a docker hub friendly name, i.e. username/obelisk-builder. We will publish to the docker hub to make configuring ECS easier. Test the container and make sure it can connect to your S3 bucket, using the credentials of your S3 IAM user.
             
@@ -83,7 +84,7 @@ All that is left to configure is our Lambda job. It will subscribe to the SNS to
         //console.log('From SNS:', event.Records[0].Sns.Message);
         var ecs = new aws.ECS();
         var params = {
-          taskDefinition: 'arn:aws:ecs:us-west-2:654012924434:task-definition/build-blog:3',
+          taskDefinition: 'arn:aws:ecs:us-west-2:<acc number>:task-definition/build-blog:3',
           count: 1,
           startedBy: 'lambda'
         };
@@ -112,7 +113,7 @@ Create an IAM role with the following policy to use so that the Lambda function 
             "ecs:RunTask"
           ],
           "Resource": [
-            "arn:aws:ecs:us-west-2:654012924434:task-definition/build-blog:*"
+            "arn:aws:ecs:us-west-2:<acc number>:task-definition/build-blog:*"
           ]
         }
       ]
