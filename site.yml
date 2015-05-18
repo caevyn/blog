@@ -4,5 +4,5 @@ url: http://maltmurphy.com
 description: Matt Murphy | Lautering my mind. Code and Brewing.
 language: en-us
 posts_per_page: 10
-theme: "https://github.com/obelisk-ex/skelington.git"
+theme: "caevyn/skelington"
 bio: I live in Maitland, NSW. Software and home brew.
