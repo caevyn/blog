@@ -16,7 +16,8 @@ Github already has a convenient SNS integration which will publish a notificatio
 
 There are certainly simpler ways to generate and host a blog, so think of this as a generic batch pipeline where the jobs might require different run-times or resources. Docker gives you isolation and ECS will take care of scheduling your task so that it gets allocated the required resources in your cluster. Since ECS is just EC2 under the hood, you can take advantage of auto scaling groups, VPC security, etc. The combination of Lambda and ECS could be applied to many other batch scenarios.
 
-###SNS Topic and Github Integration
+### SNS Topic and Github Integration
+
 Create a new SNS topic and add an email subscription so we can test that it works. You can use the UI or AWS cli.
     
         $ aws sns create-topic --name BlogDeploy
@@ -36,10 +37,12 @@ It is also worth creating an IAM user just for this with permission to publish t
 
 In your Github repo, go to Settings -> WebHooks and Services and add an AmazonSNS service. You just need to provide the arn and region of the topic and the Id and secret key of the IAM user created earlier. Pushing a change to the repo should now publish an SNS message and subsequent email.
 
-###S3 bucket and Route 53
+### S3 bucket and Route 53
+
 Set up an S3 bucket to host the site. I won't go into detail here, AWS has good docs around it [here](http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html). It is important to name the bucket the same as your domain. E.g. maltmurphy.com. Again, I suggest creating an IAM user just for publishing to the bucket. Add a bucket policy that allows that user to write to that bucket. Setting up route 53 for my domain was also straight forward thanks to the [good docs](http://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html).
 
-###Docker container
+### Docker container
+
 The docker container I use for the blog can be found [here](https://github.com/caevyn/obelisk-builder). It inherits from an existing Elixir base image, adds the aws-cli and a shell script. When you run the container the following script runs:
 
     #!/bin/bash
@@ -59,7 +62,7 @@ Build the Docker container and give it a docker hub friendly name, i.e. username
      
      docker push username/obelisk-builder
 
-##ECS
+### ECS
 
 Now we have a Docker image published to the hub we can set up an ECS task. When you first visit ECS you will step through a wizard where you can create a task on a default cluster. In step 1, choose 'custom task definition'. In the task definition, put in the name of the image you published to the docker hub, allocate some resources and set the AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY environment variables for the S3 user's credentials. In step 3, choose 'run tasks once' and set the desired number of tasks to 1. Continue on and configure the cluster so that there is at least one instance. You will also be asked to create an IAM role that allows access to the ECS service. The ECS task definition can be found in this [Gist](https://gist.github.com/caevyn/c89e74e560c1545682f9). 
 
@@ -69,7 +72,8 @@ Run the task and hopefully everything works. If it doesn't, there are a couple o
 
 The 'docker logs' command is also very handy to see what exactly went on during the task run.
 
-###Lambda
+### Lambda
+
 All that is left to configure is our Lambda job. It will subscribe to the SNS topic and kick off the ECS task using the node aws-sdk.
 
     console.log('Loading function');
@@ -119,5 +123,6 @@ The final piece is to add a subscription to the SNS topic for the Lambda job. Go
 
 If you push to your Git repo, you should now see an update to your blog soon after.
 
-##Final Thoughts
+### Final Thoughts
+
 As I mentioned earlier, there are easier ways to generate a blog. However, the combination of Lambda and ECS tasks is a nice way to run batch jobs in reaction to events, especially if you have a variety of run-times which can be easily wrapped up via Docker. Uploading a file to S3, processing some data with your favourite language and producing some reports or other output describes a lot of batch workloads and this could be a nice way to manage them. The thing that continues to impress me about AWS is how the new services compliment the existing ones and everything works well together.
