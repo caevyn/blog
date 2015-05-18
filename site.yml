@@ -6,3 +6,5 @@ language: en-us
 posts_per_page: 6
 theme: "caevyn/skelington"
 bio: I live in Maitland, NSW. You will find me writing about software and brewing.
+github: "http://github.com/caevyn"
+twitter: "https://twitter.com/maltmurphy"
