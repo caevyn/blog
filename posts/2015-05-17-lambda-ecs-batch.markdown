@@ -71,7 +71,7 @@ The docker container I use for the blog can be found [here](https://github.com/c
     git clone https://github.com/caevyn/blog.git
     cd ./blog
     mix do deps.get, deps.compile
-    mix obelisk build >> obelisk_log 2>&1
+    mix obelisk build > obelisk_log 2>&1
     aws s3 sync obelisk_log s3://maltmurphy-logs/obelisk_log
     aws s3 sync build s3://maltmurphy.com/ --delete
  
