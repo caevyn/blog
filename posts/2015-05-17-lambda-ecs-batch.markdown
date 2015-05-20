@@ -11,7 +11,7 @@ Another new AWS service is Lambda, which allows you to run nodejs functions in r
 Lambda on its own would probably be perfect for generating a static site using a nodejs static site generator, but I've become quite fond of Elixir and want to use [Benny Hallet's Obelisk](https://github.com/BennyHallett/obelisk) for a blog generator. To do this I'll need the Erlang VM, Elixir, an Obelisk blog to generate, and somewhere to put the output. I also want to trigger a rebuild every time I push to Github.
 
 The following diagram gives a better idea how these piece can fit together.
-![Blog generation diagram](http://www.gliffy.com/go/publish/image/8087461/L.png)
+![Blog generation diagram](http://img.maltmurphy.com/hipsterbatchgliffy.png)
 
 Github already has a convenient SNS integration which will publish a notification on push. AWS Lambda can subscribe to an SNS topic to trigger the nodejs function, which can in turn use the nodejs AWS SDK to kick off our ECS task. The ECS task consists of a Docker container which just runs a build script. It grabs the latest blog code, runs Obelisk to generate the blog, and publishes it to an S3 bucket serving a website via Route 53.
 
