@@ -7,9 +7,9 @@ English bitter is probably my favourite style of beer. Bitter is simply English 
 I've been growing goldings in my backyard for a couple of years now and this UK variety is the perfect hop for a bitter. Due to the surplus of free hops and my love for the style it is probably the most common beer I brew. In chasing perfection, I've tried many combinations of malt, yeast and hops. I think with my latest best bitter I've finally nailed it, and the missing ingredient was simplicity. Many of my bitter grists have had up to 6 malts, and I can't help my self when it comes to Belgian biscuit malt, which isn't really to style. My latest attempt looked like this for a 20L batch:
 * 4.8kg Thomas Fawcett floor malted Maris Otter
 * 0.3kg Simpsons Heritage Crystal
-* 45g goldings @60mmins
-* 30g goldings @15mins
-* 30g goldings @5mins
+* 45g goldings at 60mmins
+* 30g goldings at 15mins
+* 30g goldings at 5mins
 * Safale S04
 * 10g gypsum (CaSO4)
 * Mashed at 67C, original gravity: 1.044, final gravity: 1.011, 
