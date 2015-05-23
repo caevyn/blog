@@ -9,12 +9,12 @@ date: "May 23rd, 2015"
 English bitter is probably my favourite style of beer. Bitter is simply English for pale ale, and despite the name, usually not particularly bitter. The key ingredients in a tradtional bitter are: Good English malt, English yeast, and English hops. Bitters are roughly divided into 3 categories: ordinary, best and extra special (ESB). These terms are used pretty loosely but generally increase in strength from ordinary through to ESB. It is also a great style for home brewing since traditional English sparging methods are pretty close to the simple batch sparging employed by most home brewers.
 
 I've been growing goldings in my backyard for a couple of years now and this UK variety is the perfect hop for a bitter. Due to the surplus of free hops and my love for the style it is probably the most common beer I brew. In chasing perfection, I've tried many combinations of malt, yeast and hops. I think with my latest best bitter I've finally nailed it, and the missing ingredient was simplicity. Many of my bitter grists have had up to 6 malts, and I can't help my self when it comes to Belgian biscuit malt, which isn't really to style. My latest attempt looked like this for a 20L batch:
-* 4.8kg Thomas Fawcett floor malted Maris Otter
-* 0.3kg Simpsons Heritage Crystal
-* 45g goldings @60mmins
-* 30g goldings @15mins
-* 30g goldings @5mins
-* Safale S04
+* <malt>4.8kg Thomas Fawcett floor malted Maris Otter</malt>
+* <malt>0.3kg Simpsons Heritage Crystal</malt>
+* <hop>45g goldings @60mmins</hop>
+* <hop>30g goldings @15mins</hop>
+* <hop>30g goldings @5mins</hop>
+* <yeast>Safale S04</yeast>
 * 10g gypsum (CaSO4)
 * Mashed at 67C, original gravity: 1.044, final gravity: 1.011, 
 * 4.4% ABV, 30IBU
