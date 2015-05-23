@@ -15,8 +15,8 @@ I've been growing goldings in my backyard for a couple of years now and this UK 
 * <hop>30g goldings @15mins</hop>
 * <hop>30g goldings @5mins</hop>
 * <yeast>Safale S04</yeast>
-* 10g gypsum (CaSO4)
-* Mashed at 67C, original gravity: 1.044, final gravity: 1.011, 
+* 10g gypsum (CaSO<sub>4</sub>)
+* Mashed at 67&deg;C, original gravity: 1.044, final gravity: 1.011, 
 * 4.4% ABV, 30IBU
 
 The grist consists of just two malts, maris otter and a good English crystal malt. Good malt makes a bitter, and you can't get much better than floor malted maris otter, which is an English barley variety bred for ale malt. Simpson's heritage crystal is a medium crystal malt also made from maris otter.
