@@ -3,6 +3,7 @@ title: batch jobs with aws lambda and docker
 description: How to use lambda and docker on ecs to run batch jobs. We will look at how to generate a static blog in a container everytime a github commit is made, uploading it to S3 when done.
 date: "May 17th, 2015"
 created: 2015-05-17
+tags: "aws,ecs,lambda,elixir"
 ---
 I've been working a lot with scheduling batch jobs at work, which isn't the most exciting thing in the world; however, I've been spending a lot of my own time playing with AWS. It turns out AWS is a convenient place to run batch jobs. There are plenty of batch scenarios where a file turns up, triggers a program to do some work, which in turn might produce some output. A popular example of this sort of processing is a static blog generator, so we will use that as an example in this post. 
 
