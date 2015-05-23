@@ -4,9 +4,7 @@ description: Brewing a best bitter.
 date: "May 23rd, 2015"
 ---
 
-## Best Bitter
-
->Simplicity is the ultimate sophistication - Leonardo da Vinci
+> Simplicity is the ultimate sophistication - Leonardo da Vinci
 
 English bitter is probably my favourite style of beer. Bitter is simply English for pale ale, and despite the name, usually not particularly bitter. The key ingredients in a tradtional bitter are: Good English malt, English yeast, and English hops. Bitters are roughly divided into 3 categories: ordinary, best and extra special (ESB). These terms are used pretty loosely but generally increase in strength from ordinary through to ESB. It is also a great style for home brewing since traditional English sparging methods are pretty close to the simple batch sparging employed by most home brewers.
 
@@ -27,7 +25,7 @@ The hops are all from my backyard and are probably goldings. The guy that gave m
 
 ![hops](http://img.maltmurphy.com/hopswide.jpg)
 
-The water where I live is mineral deficient, which means I need to adjust my water for best results. Calcium ions are beneficial for the enzyme activity in the mash, reactions in the boil, and also keep the yeast happy. I usually use calcium lactate to adjust the calcium without adding any sulphate or chloride ions from the more common calcium salts. Many English bitters are made with water high in sulphate and even those without this feature generally have much higher sulphate concentrations than my water. For this brew, I added 10g of gypsum to get to about 115ppm Ca2+ and 247ppm SO4-2. I've completely ignored the chloride to sulphate ratio, and have kept it simple, inline with my understanding of water chemistry. I definitely noticed a crisper bitterness and overall nicer hop profile in the finished beer compared to my previous bitter that used the same hops. This might have been from the gypsum; or not. I need to go read a science book and experiment more with water adjustments.
+The water where I live is mineral deficient, which means I need to adjust my water for best results. Calcium ions are beneficial for the enzyme activity in the mash, reactions in the boil, and also keep the yeast happy. I usually use calcium lactate to adjust the calcium without adding any sulphate or chloride ions from the more common calcium salts. Many English bitters are made with water high in sulphate and even those without this feature generally have much higher sulphate concentrations than my water. For this brew, I added 10g of gypsum to get to about 115ppm Ca<sup>2+</sup> and 247ppm SO4<sup>-2</sup>. I've completely ignored the chloride to sulphate ratio, and have kept it simple, inline with my understanding of water chemistry. I definitely noticed a crisper bitterness and overall nicer hop profile in the finished beer compared to my previous bitter that used the same hops. This might have been from the gypsum; or not. I need to go read a science book and experiment more with water adjustments.
 
 Most importantly, this beer tastes great and is nicely balanced between malt and hops. The distinctive bready taste from the maris otter comes through beautifully, before a crisp, bitter finish prevents it from being cloying. In my previous brews the maris otter was somewhat lost amongst all the crystal and speciality malt. This is certainly more subtle than most of my recent pale ales which were of the highly hopped American variety; however, I think it will find itself in one of my two kegs more often than not.
 
