@@ -3,6 +3,7 @@ title: best bitter
 description: Brewing a best bitter.
 date: "May 23rd, 2015"
 created: 2015-05-23
+tags: "brewing,beer"
 ---
 
 > Simplicity is the ultimate sophistication - Leonardo da Vinci
