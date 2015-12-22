@@ -5,9 +5,6 @@ date: "December 22nd, 2015"
 created: 2015-12-22
 tags: "brewing,beer"
 ---
-
-## American Pale Ales
-
 Over the past year I've brewed more APAs than any other style. I also entered my first homebrew competitions, and American Pale Ale has been the style I've had the most success with. I've made small changes to the grist, experimented with different hop varieties, and spent too much time trying to second guess what the judges are after. I'll go over the general approach I've taken to the style, share the recipes, and unashamedly gloat about the accolades.
 
 ### Yeast
